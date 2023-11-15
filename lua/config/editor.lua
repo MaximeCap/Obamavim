@@ -1,6 +1,10 @@
 return {
   "telescope.nvim",
   dependencies = {
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+    },
     "nvim-telescope/telescope-file-browser.nvim",
   },
   keys = {
@@ -21,24 +25,28 @@ return {
           hidden = true,
         })
       end,
+      desc = "Lists files in your current working directory, respects .gitignore",
     },
     {
       ";r",
       function()
         require("telescope.builtin").live_grep()
       end,
+      desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
     },
     {
       "\\\\",
       function()
         require("telescope.builtin").buffers()
       end,
+      desc = "Lists open buffers",
     },
     {
       ";t",
       function()
         require("telescope.builtin").help_tags()
       end,
+      desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
     },
     {
       ";;",
@@ -51,12 +59,14 @@ return {
       function()
         require("telescope.builtin").diagnostics()
       end,
+      desc = "Resume the previous telescope picker",
     },
     {
       ";s",
       function()
         require("telescope.builtin").treesitter()
       end,
+      desc = "Lists Function names, variables, from Treesitter",
     },
     {
       "sf",
@@ -76,12 +86,13 @@ return {
           layout_config = { height = 40 },
         })
       end,
+      desc = "Open File Browser with the path of the current buffer",
     },
   },
   config = function(_, opts)
     local telescope = require("telescope")
     local actions = require("telescope.actions")
-    local fb_actions = require("telescope").extensions.file_browser.action
+    local fb_actions = require("telescope").extensions.file_browser.actions
 
     opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
       wrap_results = true,
@@ -128,7 +139,7 @@ return {
       },
     }
     telescope.setup(opts)
-    require("telescope").load_extensions("fwf")
-    require("telescope").load_extensions("file_browser")
+    require("telescope").load_extension("fwf")
+    require("telescope").load_extension("file_browser")
   end,
 }
