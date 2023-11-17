@@ -33,6 +33,13 @@ return {
         },
       })
       vim.treesitter.language.register("markdown", "mdx")
+
+      vim.filetype.add({
+        extension = {
+          astro = "astro",
+        }
+      })
+      vim.treesitter.language.register("astro", "astro")
     end,
   },
 }
