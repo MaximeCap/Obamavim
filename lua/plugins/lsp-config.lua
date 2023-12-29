@@ -19,10 +19,10 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls .setup({})
       lspconfig.tsserver.setup({})
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-      vim.keymap.set({ 'n', 'v' }, '<C-a>', vim.lsp.buf.code_action, opts)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Show documentation" })
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "Go to declaration" })
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {desc = "Go to definition" })
+      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = "Code actions" })
     end
   }
 }
