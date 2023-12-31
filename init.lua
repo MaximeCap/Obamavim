@@ -12,6 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+
+vim.g.coq_settings = { auto_start = true }
+
 require("lazy").setup({
   spec = {
     -- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
