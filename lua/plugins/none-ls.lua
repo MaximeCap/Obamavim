@@ -10,6 +10,6 @@ return {
     })
 
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format" })
-    vim.keymap.set("n", "<leader>s", "mF:%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>:w<CR>`F", {})
+    vim.keymap.set("n", "<leader>s", "mF:%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>:w<CR>`F", { desc = "Format with Eslint" })
   end,
 }

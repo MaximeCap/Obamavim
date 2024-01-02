@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 
 vim.g.coq_settings = { auto_start = true }
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 
 require("lazy").setup({
   spec = {
