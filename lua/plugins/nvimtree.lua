@@ -1,4 +1,4 @@
-return {
+--[[ return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
   dependencies = {
@@ -20,4 +20,18 @@ return {
       }
     })
   end
+} ]]
+return {
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    local api = require 'nvim-tree.api'
+    vim.keymap.set('n', '<leader>ee', api.tree.toggle, { desc = "Toggle Nvim tree" })
+    vim.keymap.set('n', '<leader>ef', api.tree.focus, { desc = "Focus Nvim tree" })
+    require("nvim-tree").setup {}
+  end,
 }
