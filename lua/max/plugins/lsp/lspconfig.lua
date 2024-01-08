@@ -53,7 +53,7 @@ return {
       keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
       opts.desc = "Show documentation for what is under cursor"
-      keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+      keymap.set("n", "<leader>i", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
       opts.desc = "Restart LSP"
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
@@ -81,7 +81,6 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,
@@ -94,6 +93,21 @@ return {
       on_attach = on_attach,
     })
 
+    lspconfig["yamlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "yaml", "yml" },
+    })
+
+    lspconfig["dockerls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["docker_compose_language_service"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     --[[ -- configure svelte server
     lspconfig["svelte"].setup({
       capabilities = capabilities,
@@ -159,4 +173,3 @@ return {
     })
   end,
 }
-
