@@ -40,6 +40,7 @@ return {
         "pyright",
         "docker_compose_language_service",
         "dockerls",
+        "graphql",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
