@@ -33,6 +33,7 @@ return {
       "mF:%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>:w<CR>`F",
       { desc = "Format with Eslint" }
     )
+    vim.keymap.set("n", "<leader>mr", "mF:%!eslint_d restart<CR>`F", { desc = "Restart Eslint" })
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
