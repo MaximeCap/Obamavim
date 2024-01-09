@@ -43,6 +43,7 @@ return {
           "dockerfile",
           "gitignore",
           "query",
+          "astro",
         },
         incremental_selection = {
           enable = true,

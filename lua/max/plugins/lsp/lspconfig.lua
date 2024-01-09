@@ -130,6 +130,12 @@ return {
       end,
     }) ]]
 
+    -- configure astro orm server
+    lspconfig["astro"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure prisma orm server
     lspconfig["prismals"].setup({
       capabilities = capabilities,
