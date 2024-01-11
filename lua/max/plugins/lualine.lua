@@ -1,19 +1,4 @@
 return {
-  {
-    "nvim-lualine/lualine.nvim",
-    enabled = false,
-  },
-  {
-    "freddiehaddad/feline.nvim",
-    opts = {},
-    config = function(_, opts)
-      require("feline").setup()
-      require("feline").winbar.setup() -- to use winbar
-      require("feline").statuscolumn.setup() -- to use statuscolumn
-    end,
-  },
-}
---[[ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
@@ -83,4 +68,4 @@ return {
       },
     })
   end,
-} ]]
+}
