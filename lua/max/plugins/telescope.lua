@@ -1,5 +1,5 @@
 return {
- "nvim-telescope/telescope.nvim",
+  "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -22,10 +22,10 @@ return {
         },
       },
       pickers = {
-          find_files = {
-            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-          },
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
+      },
     })
 
     telescope.load_extension("fzf")
@@ -39,4 +39,3 @@ return {
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
   end,
 }
-

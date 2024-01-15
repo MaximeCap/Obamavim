@@ -42,7 +42,7 @@ return {
         { name = "nvim_lsp" },
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
-        {
+        --[[ {
           name = "html-css",
           option = {
             enable_on = {
@@ -50,19 +50,19 @@ return {
             }, -- set the file types you want the plugin to work on
             file_extensions = { "css", "sass", "less" },
           },
-        },
+        }, ]]
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
-          before = function(entry, vim_item)
+          --[[ before = function(entry, vim_item)
             if entry.source.name == "html-css" then
               vim_item.menu = entry.completion_item.menu
             end
             return vim_item
-          end,
+          end, ]]
         }),
       },
     })
