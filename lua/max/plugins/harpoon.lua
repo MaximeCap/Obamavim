@@ -6,7 +6,6 @@ return {
   config = function()
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
-
     local ui = require("harpoon.ui")
 
     keymap.set("n", "<C-e>", ui.toggle_quick_menu)
@@ -24,5 +23,18 @@ return {
       "<cmd>lua require('harpoon.ui').nav_prev()<cr>",
       { desc = "Go to previous harpoon mark" }
     )
+
+    keymap.set("n", "<leader>1", function()
+      ui.nav_file(1)
+    end)
+    keymap.set("n", "<leader>2", function()
+      ui.nav_file(2)
+    end)
+    keymap.set("n", "<leader>3", function()
+      ui.nav_file(3)
+    end)
+    keymap.set("n", "<leader>4", function()
+      ui.nav_file(4)
+    end)
   end,
 }
