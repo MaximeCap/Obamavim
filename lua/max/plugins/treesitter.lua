@@ -27,6 +27,7 @@ return {
           "json",
           "javascript",
           "typescript",
+          "cmake",
           "tsx",
           "yaml",
           "html",
@@ -42,6 +43,7 @@ return {
           "dockerfile",
           "gitignore",
           "query",
+          "astro",
         },
         incremental_selection = {
           enable = true,
@@ -52,12 +54,10 @@ return {
             node_decremental = "<bs>",
           },
         },
-        -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
       })
+
+      -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
+      require("ts_context_commentstring").setup({})
     end,
   },
 }

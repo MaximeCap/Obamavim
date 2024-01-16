@@ -15,6 +15,14 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- delete single character without copying into register
 -- keymap.set("n", "x", '"_x')
 
+-- Replace mini move
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Page up and down + center
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "<C-d>zz")
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
@@ -31,9 +39,5 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
-
-keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down" }) -- scroll down
-keymap.set("n","<C-u>", "<C-u>zz", { desc = "Scroll up" }) -- scroll up
-
-keymap.set("n","n","nzzzv", { desc = "Move to next search result" }) -- move to next search result
-keymap.set("n","N","Nzzzv", { desc = "Move to previous search result" }) -- move to previous search result
+-- Last buffer
+keymap.set("n", "<leader>b", "<cmd>b #<CR>", { desc = "Go to last buffer" }) -- Go to last buffer

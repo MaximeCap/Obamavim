@@ -1,5 +1,4 @@
 return {
-  "stevearc/dressing.nvim",
+  "ray-x/lsp_signature.nvim",
   event = "VeryLazy",
 }
-

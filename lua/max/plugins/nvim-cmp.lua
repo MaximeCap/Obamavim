@@ -1,5 +1,5 @@
 return {
-"hrsh7th/nvim-cmp",
+  "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
@@ -40,17 +40,31 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
+        --[[ {
+          name = "html-css",
+          option = {
+            enable_on = {
+              "html",
+            }, -- set the file types you want the plugin to work on
+            file_extensions = { "css", "sass", "less" },
+          },
+        }, ]]
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
+          --[[ before = function(entry, vim_item)
+            if entry.source.name == "html-css" then
+              vim_item.menu = entry.completion_item.menu
+            end
+            return vim_item
+          end, ]]
         }),
       },
     })
-  end
+  end,
 }
