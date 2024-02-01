@@ -2,12 +2,15 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
+    "nvim-lua/lsp-status.nvim",
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
+    local status = require("max.core.lsp.status")
+    status.activate()
 
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")

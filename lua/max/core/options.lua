@@ -1,4 +1,7 @@
 local opt = vim.opt -- for conciseness
+local function augroup(name)
+  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
@@ -40,3 +43,18 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup("highlight_yank"),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
+  callback = function()
+    require("max.core.colors").gen_highlights()
+    require("feline").reset_highlights()
+  end,
+})

@@ -41,3 +41,6 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- Last buffer
 keymap.set("n", "<leader>b", "<cmd>b #<CR>", { desc = "Go to last buffer" }) -- Go to last buffer
+
+-- Theme switcher
+keymap.set("n", "<leader>ts", "<cmd>:Themery <CR>", { desc = "Theme switcher" })
