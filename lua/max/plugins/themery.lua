@@ -6,7 +6,7 @@ return {
       themes = {
         {
           name = "Light",
-          colorscheme = "dawnfox",
+          colorscheme = "dayfox",
           before = [[
             vim.opt.background = 'light'
           ]],

@@ -52,9 +52,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
+--[[ vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
   callback = function()
     require("max.core.colors").gen_highlights()
     require("feline").reset_highlights()
   end,
-})
+  }) ]]
